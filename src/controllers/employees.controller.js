@@ -5,7 +5,7 @@ export const getEmployees = async (req, res) => {
         const [rows] = await pool.query('SELECT * FROM employee')
         res.send(rows)
     } catch (error) {
-        res.status(500).json({ message: 'something goes wrong' })
+        res.status(500).json({ message: error })
     }
 }
 
